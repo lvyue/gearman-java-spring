@@ -1,6 +1,5 @@
 package com.lvyuely.common.gearman;
 
-import glodon.gcj.member.center.api.gearman.function.AbstractCustomGearmanFunction;
 import org.gearman.worker.GearmanWorkerImpl;
 
 /**

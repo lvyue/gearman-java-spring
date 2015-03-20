@@ -3,11 +3,15 @@ package com.lvyuely.common.gearman;
 import org.apache.commons.lang3.StringUtils;
 import org.gearman.util.ByteUtils;
 import org.gearman.worker.AbstractGearmanFunction;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Created by lvyue on 15/3/9.
  */
 public abstract class AbstractCustomGearmanFunction extends AbstractGearmanFunction {
+
+    private static final Logger logger  = LoggerFactory.getLogger(AbstractCustomGearmanFunction.class);
 
     /**
      * UTF－8字符编码格式
@@ -69,9 +73,9 @@ public abstract class AbstractCustomGearmanFunction extends AbstractGearmanFunct
      *
      * @return
      */
-    public boolean isEmptyData() {
+    public boolean isDataEmpty() {
         //
-        return (this.data == null || ((byte[]) this.data).length == 0 || StringUtils.isBlank(getStringData()));
+        return (this.data == null || ((byte[]) this.data).length == 0);
     }
 
 

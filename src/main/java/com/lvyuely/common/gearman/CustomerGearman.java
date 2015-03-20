@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  *
@@ -26,17 +28,17 @@ public class CustomerGearman extends Thread {
     /**
      * Gearman server host
      */
-    public String host;
+    private String host;
 
     /**
      * Gearman server port
      */
-    public int port;
+    private int port;
 
     /**
      * Gearman Functions
      */
-    public List<AbstractCustomGearmanFunction> functions = new ArrayList<AbstractCustomGearmanFunction>();
+    private Set<AbstractCustomGearmanFunction> functions = new HashSet<AbstractCustomGearmanFunction>();
 
     /**
      * Gearman 服务器连接

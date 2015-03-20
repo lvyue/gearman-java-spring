@@ -9,7 +9,6 @@ import org.gearman.worker.GearmanFunctionFactory;
  */
 public class CustomerGearmanFunctionFactory implements GearmanFunctionFactory {
 
-    private final String className;
     private final String functionName;
     private final AbstractGearmanFunction function;
 
@@ -21,7 +20,7 @@ public class CustomerGearmanFunctionFactory implements GearmanFunctionFactory {
         // 设置对象
         this.function = f;
         // 设置class名称
-        this.className = f.getClass().getName();
+        String className = f.getClass().getName();
         // 获取对象名称
         String fname = f.getName();
         // 判断对象名称
