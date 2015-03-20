@@ -1,9 +1,9 @@
 package com.lvyuely.common.gearman;
 
-import glodon.gcj.member.center.api.gearman.function.AbstractCustomGearmanFunction;
-import glodon.gcj.member.center.api.override.CustomerGearmanWorkerImpl;
 import org.gearman.common.GearmanJobServerConnection;
 import org.gearman.common.GearmanNIOJobServerConnection;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 
@@ -11,9 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by lvyue on 15/3/9.
+ *
  */
-public class CustomerGearmanWorker extends Thread {
+public class CustomerGearman extends Thread {
+
+    private final static Logger logger = LoggerFactory.getLogger(CustomerGearman.class);
 
     /**
      * Spring Root Context
